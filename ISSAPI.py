@@ -1,6 +1,12 @@
 import requests
+import json
 
-response = requests.get('https://api.wheretheiss.at/v1/satellites/25544')
+response = requests.get('https://api.wheretheiss.at/v1/satellites')
 
 print(response.status_code)
-print(response.json())
+
+def jprint(obj):
+    text = json.dumps(obj,sort_keys=True, indent=4)
+    print(text)
+
+jprint(response.json())

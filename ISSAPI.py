@@ -13,7 +13,8 @@ else:
     print(response.status_code)
 
 UsrQuestion = input("What is your question? ")
-print(Jsonresponse[UsrQuestion])
+toresponse = UsrQuestion.lower()
+print(Jsonresponse[toresponse])
 
 
 input()

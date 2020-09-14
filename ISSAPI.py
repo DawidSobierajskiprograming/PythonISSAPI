@@ -1,12 +1,19 @@
 import requests
 import json
 
-response = requests.get('https://api.wheretheiss.at/v1/satellites')
+response = requests.get('https://api.wheretheiss.at/v1/satellites/25544')
+Jsonresponse = response.json()
 
-print(response.status_code)
 
-def jprint(obj):
-    text = json.dumps(obj,sort_keys=True, indent=4)
-    print(text)
+if response.status_code == 200:
+    print ("Everything is ok and works fine. ")
+    print (response.status_code)
+else:
+    print("There was an issue that occoured when calling thew API. ")
+    print(response.status_code)
 
-jprint(response.json())
+UsrQuestion = input("What is your question? ")
+print(Jsonresponse[UsrQuestion])
+
+
+input()

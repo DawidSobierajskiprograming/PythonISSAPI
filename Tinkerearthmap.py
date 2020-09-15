@@ -1,11 +1,12 @@
 import tkinter
 from tkinter import *
+from tkinter import messagebox
 
 window = tkinter.Tk()
 
 window.title("GUI") 
 def send_message():
-    print("Hello World!")
+    messagebox.showinfo("Hello Python!", "Hello World!")
 
 label = tkinter.Label(window, text = "- GO FUCK YOUR SELF -").pack()
 

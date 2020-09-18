@@ -29,4 +29,14 @@ def getvelocity():
     velocitystr = str(jresponse['velocity'])
     return velocitystr
 
+def getlatitude():
+    getdataURL = requests.get(url.format('/satellites/25544'))
+    jresponse = getdataURL.json()
+    latitudestr = str(jresponse['latitude'])
+    return latitudestr
 
+def getlongitude():
+    getdataURL = requests.get(url.format('/satellites/25544'))
+    jresponse = getdataURL.json()
+    longitudestr = str(jresponse['longitude'])
+    return longitudestr

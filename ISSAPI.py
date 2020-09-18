@@ -1,3 +1,6 @@
+import tkinter
+from tkinter import *
+from tkinter import messagebox
 import requests
 import json
 
@@ -17,6 +20,13 @@ else:
 def getaltitude():
     getdataURL = requests.get(url.format('/satellites/25544'))
     jresponse = getdataURL.json()
-    print(jresponse['altitude'])
+    altitudestr = str(jresponse['altitude'])
+    return altitudestr
 
-getaltitude()
+def getvelocity():
+    getdataURL = requests.get(url.format('/satellites/25544'))
+    jresponse = getdataURL.json()
+    velocitystr = str(jresponse['velocity'])
+    return velocitystr
+
+

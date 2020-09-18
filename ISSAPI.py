@@ -2,20 +2,21 @@ import requests
 import json
 
 
-response = requests.get('https://api.wheretheiss.at/v1/satellites/25544')
-Jsonresponse = response.json()
+url = 'https://api.wheretheiss.at/v1{}'
+
+IsItUp = requests.get(url.format('/satellites/25544'))
 
 
-if response.status_code == 200:
+if IsItUp.status_code == 200:
     print ("Everything is ok and works fine. ")
-    print (response.status_code)
+    print (IsItUp.status_code)
 else:
     print("There was an issue that occoured when calling thew API. ")
-    print(response.status_code)
+    print(IsItUp.status_code)
 
-UsrQuestion = input("What is your question? ")
-toresponse = UsrQuestion.lower()
-print(Jsonresponse[toresponse])
+def getaltitude():
+    getdataURL = requests.get(url.format('/satellites/25544'))
+    jresponse = getdataURL.json()
+    print(jresponse['altitude'])
 
-
-input()
+getaltitude()

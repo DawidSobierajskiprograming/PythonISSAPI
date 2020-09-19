@@ -40,3 +40,9 @@ def getlongitude():
     jresponse = getdataURL.json()
     longitudestr = str(jresponse['longitude'])
     return longitudestr
+
+def getcountrycode():
+    getdataURL = requests.get(url.format('/coordinates/'+ getaltitude() +','+getlongitude()))
+    jresponse = getdataURL.json()
+    countrycode = jresponse['country_code']
+    return countrycode

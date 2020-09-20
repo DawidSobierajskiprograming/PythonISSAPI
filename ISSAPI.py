@@ -57,5 +57,3 @@ def TimestampToDateAndTime():
     timestampnum = jresponse['timestamp']
     time = str(datetime.fromtimestamp(timestampnum))
     return time
-
-print(getcountrycode())

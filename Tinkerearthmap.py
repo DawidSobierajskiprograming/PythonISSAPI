@@ -16,8 +16,8 @@ def send_message2():
 def send_message3():
     messagebox.showinfo("ISS latitude and Longitude", "The ISS is at Latitude " + getlatitude() + "° N, Longitude " + getlongitude() + "° E" )
 
-#def send_message4():
-#    messagebox.showinfo("ISS country code", "The ISS is above" + getcountrycode())
+def send_message4():
+    messagebox.showinfo("ISS country code", "The ISS is above " + getcountrycode())
 
 ISSimage = Canvas(window, width = 720, height = 400)
 ISSimage.pack()
@@ -30,6 +30,6 @@ label2 = tkinter.Label(window, text = "- What would you like to know about the I
 button_widget = Button(window, text = "Altitude", command = send_message1).pack(side=LEFT, padx=10)
 button_widget = Button(window, text = "Velocity", command = send_message2).pack(side=LEFT, padx=10)
 button_widget = Button(window, text = "Latitude and longitude", command = send_message3).pack(side=LEFT, padx=10)
-#button_widget = Button(window, text = "Location", command = send_message4).pack(side=LEFT, padx=10)
+button_widget = Button(window, text = "Location", command = send_message4).pack(side=LEFT, padx=10)
 
 window.mainloop()

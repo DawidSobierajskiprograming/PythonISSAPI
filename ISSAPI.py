@@ -43,6 +43,11 @@ def getlongitude():
 
 def getcountrycode():
     getdataURL = requests.get(url.format('/coordinates/'+ getaltitude() +','+getlongitude()))
-    jresponse = getdataURL.json()
-    countrycode = jresponse['country_code']
+    if getdataURL.status_code == 200:
+        jresponse = getdataURL.json()
+        countrycode = jresponse['country_code']
+    else:
+        countrycode = "Water"
     return countrycode
+
+print(getcountrycode())

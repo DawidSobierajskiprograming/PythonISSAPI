@@ -8,16 +8,17 @@ img = PhotoImage(file='ISSimage.gif')
 window.title("ISS Info")
 
 def send_message1():
-    messagebox.showinfo("ISS altitude", "The ISS is " + getaltitude() + " Kilometers above sea level")
+    messagebox.showinfo("ISS altitude", "The ISS is " + getaltitude() + " Kilometers above sea level at " + TimestampToDateAndTime())
 
 def send_message2():
-    messagebox.showinfo("ISS velocity", "The ISS is traveling at " + getvelocity() + " Kph")
+    messagebox.showinfo("ISS velocity", "The ISS is traveling at " + getvelocity() + " Kph at " + TimestampToDateAndTime())
 
 def send_message3():
-    messagebox.showinfo("ISS latitude and Longitude", "The ISS is at Latitude " + getlatitude() + "° N, Longitude " + getlongitude() + "° E" )
+    messagebox.showinfo("ISS latitude and Longitude", "The ISS is at Latitude " + getlatitude() + "° N, Longitude " + getlongitude() + "° E at " + TimestampToDateAndTime() )
 
 def send_message4():
-    messagebox.showinfo("ISS country code", "The ISS is above " + getcountrycode())
+    messagebox.showinfo("ISS country code", "The ISS is above " + getcountrycode() + " at " + TimestampToDateAndTime())
+
 
 ISSimage = Canvas(window, width = 720, height = 400)
 ISSimage.pack()

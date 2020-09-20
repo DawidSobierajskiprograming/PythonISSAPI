@@ -1,6 +1,7 @@
 import tkinter
 from tkinter import *
 from tkinter import messagebox
+from datetime import *
 import requests
 import json
 
@@ -49,5 +50,12 @@ def getcountrycode():
     else:
         countrycode = "Water"
     return countrycode
+
+def TimestampToDateAndTime():
+    getdataURL = requests.get(url.format('/satellites/25544'))
+    jresponse = getdataURL.json()
+    timestampnum = jresponse['timestamp']
+    time = str(datetime.fromtimestamp(timestampnum))
+    return time
 
 print(getcountrycode())

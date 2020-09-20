@@ -11,7 +11,7 @@
     - Current latitude and longitude of the ISS
     - What country the ISS is above unless its above water in which case it says it is above water
   - Have 4 points of data being returned to the User like stated above
- Future additions that i have planed include
+ Future additions that i have planed include:
   - How to print results in the same window as the buttons
   - Map of the world with as small image of the ISS with a arrow pointg down on the map in corelation to the latitude and longitude of where it actualy is
     some way of doing this might include:

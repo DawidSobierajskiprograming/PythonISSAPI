@@ -43,13 +43,15 @@ def getlongitude():
     return longitudestr
 
 def getcountrycode():
-    getdataURL = requests.get(url.format('/coordinates/'+ getaltitude() +','+getlongitude()))
+    getdataURL = requests.get(url.format('/coordinates/'+ getlatitude() +','+ getlongitude()))
     if getdataURL.status_code == 200:
         jresponse = getdataURL.json()
         countrycode = jresponse['country_code']
-    else:
-        countrycode = "Water"
-    return countrycode
+        if countrycode == "??":
+            countrycode = "Water"
+            return countrycode
+        else:
+            return countrycode
 
 def TimestampToDateAndTime():
     getdataURL = requests.get(url.format('/satellites/25544'))
